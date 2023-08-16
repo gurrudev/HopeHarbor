@@ -11,7 +11,7 @@ import search from './search.svg';
 import menu from './menu.svg';
 import money from './money.svg';
 import loader from './loader.svg';
-
+import profileImg from './profileImg.png'
 
 export {
   tagType,
@@ -27,4 +27,5 @@ export {
   menu,
   money,
   loader,
+  profileImg
 };
