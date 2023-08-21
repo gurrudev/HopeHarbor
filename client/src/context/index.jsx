@@ -44,8 +44,16 @@ export const StateContextProvider = ({children}) => {
       pId : i
     }))
 
-    console.log(parsedCampaigns)
+    // console.log(parsedCampaigns)
     return parsedCampaigns
+  }
+
+  const getUserCampaigns = async() => {
+    const allCampaigns = await getCampaigns()
+
+    const filteredCampaigns = allCampaigns.filter(campaign =>campaign.owner === address)
+
+    return filteredCampaigns
   }
 
   return (
@@ -56,6 +64,7 @@ export const StateContextProvider = ({children}) => {
         connect,
         createCampaign: publishCampaign,
         getCampaigns,
+        getUserCampaigns,
       }}
     >
       {children}
