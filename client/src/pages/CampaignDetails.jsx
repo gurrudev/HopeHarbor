@@ -39,8 +39,60 @@ function CampaignDetails() {
       <div className='mt-[60px] flex lg:flex-row flex-col gap-5'>
         <div className='flex-[2] flex flex-col gap-[40px]'>
           <div>
-            <h4 className='font-epilogue font-semibold text-[18px] p-3 uppercase'>Creator</h4>
-            
+            <h4 className='font-epilogue text-left font-semibold text-[18px] uppercase'>Creator</h4>
+            <div className='mt-[20px] flex flex-row items-center flex-wrap gap-[14px] '>
+              <div className='w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer'>
+                <img src={profileImg} alt="user" className='w-[70%] h-[70%] object-contain'/>
+              </div>
+              <div>
+                <h4 className='font-epilogue font-semibold text-[14px] break-all'>{state.owner}</h4>
+                <p className='mt-[4px] font-epilogue font-normal text-[14px] text-[#808191]'>10 Campaigns</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 className='font-epilogue text-left font-semibold text-[18px] uppercase'>Story</h4>
+            <div className='mt-20px'>
+              <p className='font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify'>{state.description}</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className='font-epilogue text-left font-semibold text-[18px] uppercase'>Donators</h4>
+            <div className='mt-20px flex flex-col gap-4'>
+
+              {donators.length > 0 ? donators.map((item, 
+                index) =>{
+                    <div>
+                      DONATOR
+                    </div>
+                }) : (
+                  <p className='font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify'>No donators yet. Be the first one!</p>
+                )
+              }
+            </div>
+          </div>
+        </div>
+
+        <div className='flex-1 '>
+        <h4 className='font-epilogue text-left font-semibold text-[18px] uppercase'>Fund</h4>
+          <div className='mt-[20px] flex flex-col p-4 bg-[#1c1c24] rounded-[10px]'>
+            <p className='font-epilogue font-medium text-[20px] leading-[30px] text-center text-[#809191]'>Fund The Campaign</p>
+            <div className='mt-[30px]'>
+              <input 
+                type="number" 
+                placeholder='ETH 0.1'
+                step='0.0001'
+                className='w-full py-[10px] sm:px-[20px] px-[15px] outline-none border-2 border-[#3a3a43] bg-transparent font-epilogue text-[18px] leading-[30px] placeholder:text-[#4b5264] rounded-[10px]'
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+              />
+
+              <div className='mt-[20px] '>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
