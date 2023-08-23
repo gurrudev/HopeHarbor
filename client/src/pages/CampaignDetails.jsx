@@ -4,7 +4,7 @@ import { profileImg } from '../assets'
 import { useLocation } from 'react-router-dom'
 import { useStateContext } from '../context'
 import { daysLeft, calculateBarPercentage } from '../utils'
-import { CountBox } from '../components'
+import { CountBox, CustomButton } from '../components'
 
 function CampaignDetails() {
   const { state } = useLocation()
@@ -15,6 +15,12 @@ function CampaignDetails() {
   const [donators, setDonators] = useState([])
 
   const remainingDays = daysLeft(state.deadline)
+
+
+  const handleDonate = () =>{
+    
+  }
+
   return (
     <div>
       {isLoading && 'Loading...'}
@@ -89,9 +95,16 @@ function CampaignDetails() {
                 onChange={(e) => setAmount(e.target.value)}
               />
 
-              <div className='mt-[20px] '>
-
+              <div className='mt-[20px] p-4 bg-[#13131a]'>
+                <h4 className='font-epilogue font-semibold text-[16px] leading-[22px]'>Back it because you believe in it.</h4>
+                <p className='mt-[10px] font-epilogue font-normal leading-[22px] text-[#808191]'>Support the campaign for no reward, just because it speaks to you</p>
               </div>
+              <CustomButton
+                btnType='button'
+                title='Fund Campaign'
+                styles='w-full bg-[#8c6dfd] mt-[20px]'
+                handleClick={handleDonate}
+              />
             </div>
           </div>
         </div>
