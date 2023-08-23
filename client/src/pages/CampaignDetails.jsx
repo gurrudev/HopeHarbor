@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 import { profileImg } from '../assets'
 import { useLocation } from 'react-router-dom'
@@ -8,7 +8,7 @@ import { CountBox, CustomButton } from '../components'
 
 function CampaignDetails() {
   const { state } = useLocation()
-  const { getDonations, contract, address } = useStateContext()
+  const {donate, getDonations, contract, address } = useStateContext()
 
   const [isLoading, setIsLoading] = useState(false)
   const [amount, setAmount] = useState('')
@@ -16,10 +16,21 @@ function CampaignDetails() {
 
   const remainingDays = daysLeft(state.deadline)
 
+  const fetchDonators = async() =>{
+    const data = await getDonations(state.pId)
 
-  const handleDonate = () =>{
-    
+    setDonators(data)
   }
+
+  const handleDonate = async() =>{
+    setIsLoading(true) 
+    await donate(state.pId, amount)
+    setIsLoading(false)
+  }
+
+  useEffect(()=>{
+    if(contract) fetchDonators()
+  },[contract, address])
 
   return (
     <div>
