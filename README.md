@@ -15,13 +15,16 @@
   
   <img src = "https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
  
-  <img src="https://img.shields.io/badge/Material_UI-27374D?style=for-the-badge&logo=mui&" alt="nodejs" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-27374D?style=for-the-badge&logo=tailwind-css&" alt="nodejs" />
+  <img src="https://img.shields.io/badge/Vite-323330?style=for-the-badge&logo=vite" alt="nodejs" />
 </p>
 
-<h4 align="">Api:</h4>
+<h4 align="">Backend</h4>
 
 <p align="">
- <a href="https://www.coingecko.com" ><img src="https://img.shields.io/badge/CoinGecko-27374D?style=for-the-badge&logo=axios&logoColor=" alt="cyclic" /> </a>
+ <a href="https://www.coingecko.com" ><img src="https://img.shields.io/badge/thirdweb-27374D?style=for-the-badge&logo=web3.js" alt="cyclic" /> </a>
+   <img src="https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity" alt="cyclic" />
+   <img src="https://img.shields.io/badge/hardhat-27374D?style=for-the-badge&logo=hardhat" alt="cyclic" />
 </p>
 
 <h4 align="">Deployed On:</h4>
@@ -32,7 +35,7 @@
 
 <h4 align="">Screenshot:</h4>
 
-![Screenshot 2023-08-13 170755](https://github.com/gurrudev/CryptoTracker/assets/80522156/6a22baaf-de8a-4723-b0aa-ed5aec65d1eb) | ![Screenshot 2023-08-13 170926](https://github.com/gurrudev/CryptoTracker/assets/80522156/98b31b67-3906-41b9-b993-36e78b91bd38) |
+![Screenshot 2023-08-23 170150](https://github.com/gurrudev/HopeHarbor/assets/80522156/7bd52ea1-ed6a-4109-86ec-30a1f24c5fc0) | ![Screenshot 2023-08-23 161604](https://github.com/gurrudev/HopeHarbor/assets/80522156/ae98695d-4325-4a39-a510-fb8227f7bf89) |
 | :---: | :---: | 
 
 <h3 align=""><a href="https://cryptotrackerno1.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
