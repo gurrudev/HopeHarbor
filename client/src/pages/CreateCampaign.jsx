@@ -11,7 +11,7 @@ function CreateCampaign() {
 
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
-  const {createCampaign } = useStateContext()
+  const { createCampaign } = useStateContext()
 
   const [form, setForm] = useState({
     name: '',
@@ -22,33 +22,33 @@ function CreateCampaign() {
     image: '',
   })
 
-  const handleFormFieldChange = (fieldName, e) => { 
-    setForm({...form, [fieldName]: e.target.value})
+  const handleFormFieldChange = (fieldName, e) => {
+    setForm({ ...form, [fieldName]: e.target.value })
   }
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
-    checkIfImage(form.image, async(exists) => {
+    checkIfImage(form.image, async (exists) => {
       if (exists) {
         setIsLoading(true)
-        await createCampaign({...form, target: ethers.utils.parseUnits(form.target, 18)})
+        await createCampaign({ ...form, target: ethers.utils.parseUnits(form.target, 18) })
         setIsLoading(false)
         navigate('/')
-      }else {
+      } else {
         alert('Please provide a valid image URL')
-        setForm({...form, image: ''})
+        setForm({ ...form, image: '' })
       }
     })
 
     console.log(form)
   }
 
- 
+
 
   return (
     <div className="bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
-      {isLoading && <Loader/>}
+      {isLoading && <Loader />}
       <div className="flex justify-center items-center p-[16px] sm:min-w-[380px] bg-[#3a3a43] rounded-[10px]">
         <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-white">Start a Campaign</h1>
       </div>
@@ -100,22 +100,22 @@ function CreateCampaign() {
             handleChange={(e) => handleFormFieldChange('deadline', e)}
           />
 
-<FormField
+          <FormField
             labelName="Campaign Image *"
             placeholder="Place the image URL of your campaign"
             inputType="text"
             value={form.image}
             handleChange={(e) => handleFormFieldChange('image', e)}
           />
-          </div>
-          <div className="flex justify-center items-center mt-4 mb-4">
-            <CustomButton
-              btnType={'submit'}
-              title={'Submit new campaign'}
-              styles={`bg-[#1dc071] `}
-            />
-          </div>
-        
+        </div>
+        <div className="flex justify-center items-center mt-4 mb-4">
+          <CustomButton
+            btnType={'submit'}
+            title={'Submit new campaign'}
+            styles={`bg-[#1dc071] `}
+          />
+        </div>
+
       </form>
     </div>
   )
