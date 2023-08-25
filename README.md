@@ -22,7 +22,7 @@
 <h4 align="">Backend</h4>
 
 <p align="">
- <a href="https://www.coingecko.com" ><img src="https://img.shields.io/badge/thirdweb-27374D?style=for-the-badge&logo=web3.js" alt="cyclic" /> </a>
+ <a href="https://thirdweb.com" ><img src="https://img.shields.io/badge/thirdweb-27374D?style=for-the-badge&logo=web3.js" alt="cyclic" /> </a>
    <img src="https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity" alt="cyclic" />
    <img src="https://img.shields.io/badge/hardhat-27374D?style=for-the-badge&logo=hardhat" alt="cyclic" />
 </p>
