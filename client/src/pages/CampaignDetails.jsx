@@ -8,7 +8,7 @@ import { CountBox, CustomButton, Loader } from '../components'
 
 function CampaignDetails() {
   const { state } = useLocation()
-  const {donate, getDonations, contract, address } = useStateContext()
+  const {donate, getDonations, contract, address, getCampaigns} = useStateContext()
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
   const [amount, setAmount] = useState('')
@@ -22,6 +22,26 @@ function CampaignDetails() {
     setDonators(data)
   }
 
+  const [totalCampaignsOfOwner, setTotalCampaignOfOwner] = useState(0) //
+
+  let allCampaigns = [];
+  
+  // To get the total number of campaigns of the perticular owner
+  const countOccurrences = (targetOwner) => {
+    const totalOccurrence = allCampaigns.flat().filter(item => item.owner === targetOwner).length;
+    setTotalCampaignOfOwner(totalOccurrence)
+  };
+  
+  // To fetch the campaigns data from the getCapaigns()
+  const fetchDataAndCount = async () => {
+    const data = await getCampaigns();
+    allCampaigns.push(data);
+    const targetOwner = state.owner; // to compare the the owner with the campaign owner
+    countOccurrences(targetOwner);
+  };
+  
+  // console.log(totalCampaignOfOwner)
+  
   const handleDonate = async() =>{
     setIsLoading(true) 
     await donate(state.pId, amount)
@@ -30,7 +50,7 @@ function CampaignDetails() {
   }
 
   useEffect(()=>{
-    if(contract) fetchDonators()
+    if(contract) fetchDonators(), fetchDataAndCount();
   },[contract, address])
 
   return (
@@ -63,7 +83,7 @@ function CampaignDetails() {
               </div>
               <div>
                 <h4 className='font-epilogue font-semibold text-[14px] break-all'>{state.owner}</h4>
-                <p className='mt-[4px] font-epilogue font-normal text-[14px] text-[#808191]'>10 Campaigns</p>
+                <p className='mt-[4px] font-epilogue font-normal text-[14px] text-[#808191]'>{totalCampaignsOfOwner} Campaigns</p>
               </div>
             </div>
           </div>
