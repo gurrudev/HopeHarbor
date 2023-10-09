@@ -37,7 +37,7 @@ function CampaignDetails() {
   const fetchDataAndCount = async () => {
     const data = await getCampaigns();
     // allCampaigns.push(data);
-    setAllCampaigns([...allCampaigns, ...[data]]);
+    setAllCampaigns(allCampaigns.push(data));
     const targetOwner = state.owner; 
     countOccurrences(targetOwner);
   };
