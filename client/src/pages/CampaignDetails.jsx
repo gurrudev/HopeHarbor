@@ -66,7 +66,7 @@ function CampaignDetails() {
         </div>
 
         <div className='flex md:w-[150px] w-full flex-wrap justify-between gap-[30px]'>
-          <CountBox title='Days Left' value={remainingDays <= 0 ? "Expired" : remainingDays} />
+          <CountBox title={remainingDays <= 0 ? "Campaign Closed" : 'Days Left'} value={remainingDays <= 0 ? "Expired" : remainingDays} />
           <CountBox title={`Raised of ${state.target}`} value={state.amountCollected} />
           <CountBox title='Total Backers' value={donators.length} />
         </div>
@@ -82,7 +82,7 @@ function CampaignDetails() {
               </div>
               <div>
                 <h4 className='font-epilogue font-semibold text-[14px] break-all'>{state.owner}</h4>
-                <p className='mt-[4px] font-epilogue font-normal text-[14px] text-[#808191]'>{totalCampaignsOfOwner} Campaigns</p>
+                <p className='mt-[4px] font-epilogue font-normal text-[14px] text-[#808191]'>{totalCampaignsOfOwner} {totalCampaignsOfOwner <=1 ? "Campaign" : "Campaign's"}</p>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ function CampaignDetails() {
             <p className='font-epilogue font-medium text-[20px] leading-[30px] text-center text-[#809191]'>Fund The Campaign</p>
             {remainingDays <= 0 ? (
               <div className='mt-[20px] p-4 bg-[#13131a]'>
-                <h4 className='font-epilogue font-semibold text-[16px] leading-[22px]'>Campaign Expired.</h4>
+                <h4 className='font-epilogue font-semibold text-[16px] leading-[22px]'>Campaign Closed.</h4>
                 <p className='mt-[10px] font-epilogue font-normal leading-[22px] text-[#808191]'>Sorry! you can't donate to this campaign as it has been expired.</p>
               </div>
             ) : (
