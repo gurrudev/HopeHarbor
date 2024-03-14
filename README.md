@@ -1,5 +1,5 @@
 <h1 align="">Hope Harbor</h1>
-<h4 align="">The Hope Harbor is Crowd Fundind platform where user can create a campaign or can donate to others campaign. This project is created using <a href='https://thirdweb.com/'>thirdweb</a> to deploy the smart contract. This platform allows user to make transaction with Ethereum (ETH) </h4>
+<h4 align="">The Hope Harbor is Crowd Funding platform where user can create a campaign or can donate to others campaign. This project is created using <a href='https://thirdweb.com/'>thirdweb</a> to deploy the smart contract. This platform allows user to make transaction with Ethereum (ETH) </h4>
 
    
 <br />
