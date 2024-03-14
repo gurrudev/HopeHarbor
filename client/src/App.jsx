@@ -1,5 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {Navbar, Sidebar} from './components'
 
@@ -8,6 +10,11 @@ import './index.css'
 
 function App() {
   return (
+    <>
+    <ToastContainer 
+      theme='dark'
+      position="top-center"
+    />
     <div className="relative sm:-8 p-4 bg-[#13131a] min-h-screen flex flex-row">
       <div className="sm:flex hidden mr-10 relative">
         <Sidebar />
@@ -24,6 +31,7 @@ function App() {
         </Routes>
       </div>
     </div>
+    </>
   )
 }
 

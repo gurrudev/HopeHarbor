@@ -2,9 +2,10 @@ import React from 'react'
 import { tagType, profileImg } from '../assets'
 import { daysLeft } from '../utils'
 
-const FundCard = ({ owner, title, description, target, deadline, amountCollected, image, handleClick }) => {
+const FundCard = ({ owner, title, description, target, deadline, amountCollected, image, handleClick}) => {
 
     const remainingDays = daysLeft(deadline)
+
 
     return (
         <div className='sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer' onClick={handleClick}>

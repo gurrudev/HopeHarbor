@@ -13,6 +13,8 @@ function CampaignDetails() {
   const [isLoading, setIsLoading] = useState(false)
   const [amount, setAmount] = useState('')
   const [donators, setDonators] = useState([])
+  const [allCampaigns, setAllCampaigns] = useState([])
+  const [totalCampaignsOfOwner, setTotalCampaignOfOwner] = useState(0)
 
   const remainingDays = daysLeft(state.deadline)
 
@@ -21,12 +23,7 @@ function CampaignDetails() {
 
     setDonators(data)
   }
-
-  const [totalCampaignsOfOwner, setTotalCampaignOfOwner] = useState(0)
-
-
-  let allCampaigns = [];
-
+  
   // To get the total number of campaigns of the perticular owner
   const countOccurrences = (targetOwner) => {
     const totalOccurrence = allCampaigns.flat().filter(item => item.owner === targetOwner).length;
@@ -36,12 +33,13 @@ function CampaignDetails() {
   // To fetch the campaigns data from the getCapaigns()
   const fetchDataAndCount = async () => {
     const data = await getCampaigns();
-    allCampaigns.push(data);
+    setAllCampaigns(data);
     const targetOwner = state.owner;
     countOccurrences(targetOwner);
   };
 
-  const handleDonate = async () => {
+  const handleDonate = async (e) => {
+    e.preventDefault()
     setIsLoading(true)
     await donate(state.pId, amount)
     navigate('/')
@@ -119,26 +117,28 @@ function CampaignDetails() {
                 <p className='mt-[10px] font-epilogue font-normal leading-[22px] text-[#808191]'>Sorry! you can't donate to this campaign as it has been expired.</p>
               </div>
             ) : (
-              <div className='mt-[30px]'>
+              <form onSubmit={handleDonate} className='mt-[30px]'>
                 <input
                   type="number"
                   placeholder='ETH 0.1'
                   step='0.0001'
+                  min='0.0001'
                   className='w-full py-[10px] sm:px-[20px] px-[15px] outline-none border-2 border-[#3a3a43] bg-transparent font-epilogue text-[18px] leading-[30px] placeholder:text-[#4b5264] rounded-[10px]'
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
+                  required
                 />
                 <div className='mt-[20px] p-4 bg-[#13131a]'>
                   <h4 className='font-epilogue font-semibold text-[16px] leading-[22px]'>Back it because you believe in it.</h4>
                   <p className='mt-[10px] font-epilogue font-normal leading-[22px] text-[#808191]'>Support the campaign for no reward, just because it speaks to you</p>
                 </div>
                 <CustomButton
-                  btnType='button'
+                  btnType='submit'
                   title='Fund Campaign'
                   styles='w-full bg-[#8c6dfd] mt-[20px]'
-                  handleClick={handleDonate}
+                  // handleClick={handleDonate}
                 />
-              </div>
+              </form>
             )}
           </div>
         </div>
