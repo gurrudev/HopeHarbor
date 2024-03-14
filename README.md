@@ -1,5 +1,5 @@
 <h1 align="">Hope Harbor</h1>
-<h4 align="">The Hope Harbor is Crowd Fundind platform where user can create a campaign or can donate to others campaign. This project is created using <a href='https://thirdweb.com/'>thirdweb</a> to deploy the smart contract. This platform allows user to make transaction with Etherium (ETH) </h4>
+<h4 align="">The Hope Harbor is Crowd Fundind platform where user can create a campaign or can donate to others campaign. This project is created using <a href='https://thirdweb.com/'>thirdweb</a> to deploy the smart contract. This platform allows user to make transaction with Ethereum (ETH) </h4>
 
    
 <br />
@@ -12,9 +12,7 @@
    <img src="https://shields.io/badge/React-27374D?logo=react&style=for-the-badge" >
   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="javascript" />
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="html5" />
-  
   <img src = "https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
- 
   <img src="https://img.shields.io/badge/Tailwind_CSS-27374D?style=for-the-badge&logo=tailwind-css&" alt="nodejs" />
   <img src="https://img.shields.io/badge/Vite-323330?style=for-the-badge&logo=vite" alt="nodejs" />
 </p>

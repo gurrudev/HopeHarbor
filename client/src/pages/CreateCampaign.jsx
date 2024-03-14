@@ -11,7 +11,7 @@ function CreateCampaign() {
 
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
-  const { createCampaign } = useStateContext()
+  const { createCampaign }  = useStateContext()
 
   const [form, setForm] = useState({
     name: '',
@@ -34,7 +34,6 @@ function CreateCampaign() {
         setIsLoading(true)
         await createCampaign({ ...form, target: ethers.utils.parseUnits(form.target, 18) })
         setIsLoading(false)
-        navigate('/')
       } else {
         alert('Please provide a valid image URL')
         setForm({ ...form, image: '' })
