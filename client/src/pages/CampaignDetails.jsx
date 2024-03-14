@@ -13,7 +13,7 @@ function CampaignDetails() {
   const [isLoading, setIsLoading] = useState(false)
   const [amount, setAmount] = useState('')
   const [donators, setDonators] = useState([])
-  const [allCampaigns, setAllCampaigns] = useState([])
+  // const [allCampaigns, setAllCampaigns] = useState([])
   const [totalCampaignsOfOwner, setTotalCampaignOfOwner] = useState(0)
 
   const remainingDays = daysLeft(state.deadline)
@@ -23,6 +23,8 @@ function CampaignDetails() {
 
     setDonators(data)
   }
+
+  let allCampaigns = []
   
   // To get the total number of campaigns of the perticular owner
   const countOccurrences = (targetOwner) => {
@@ -33,7 +35,7 @@ function CampaignDetails() {
   // To fetch the campaigns data from the getCapaigns()
   const fetchDataAndCount = async () => {
     const data = await getCampaigns();
-    setAllCampaigns(data);
+    allCampaigns.push(data);
     const targetOwner = state.owner;
     countOccurrences(targetOwner);
   };
